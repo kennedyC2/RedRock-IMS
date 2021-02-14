@@ -1,0 +1,63 @@
+<!-- ======== Footer ======== -->
+<footer>
+    <p class="copyright col-12 col-md-6 col-lg-6 col-xl-6 lf">
+        Copyright &copy; {global.yearCreated}
+    </p>
+    <p class="copyright col-12 col-md-6 col-lg-6 col-xl-6 rh">
+        {global.company}
+    </p>
+</footer>
+</div>
+</div>
+</div>
+
+<script src="assets/js/jquery-3.5.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/chartist.min.js"></script>
+<script src="assets/js/quagga.min.js"></script>
+<script {body.js}></script>
+<script>
+    var submitDp = function () {
+        var dp = document.getElementById('dp');
+        var submitBtn = document.getElementById('sbn');
+        if (dp.value !== '') {
+            submitBtn.click();
+        }
+    };
+
+    var paymentForm = document.getElementById('signUpForm');
+    var refIn = document.getElementById('ref');
+    var body = document.getElementById('body');
+    var charge = '';
+
+    if (body.className == "entry") {
+        charge = 50;
+    } else {
+        charge = document.getElementById('charge').value;
+    }
+
+    paymentForm.addEventListener('submit', payWithPaystack, false);
+
+    function payWithPaystack() {
+        var handler = PaystackPop.setup({
+            key: 'pk_live_091a1efd4a0c4a111de8019fe315e2ce8efb8334',
+            email: document.getElementById('email').value,
+            amount: charge * 100,
+            currency: 'NGN',
+            firstname: document.getElementById('first').value,
+            lastname: document.getElementById('last').value,
+            reference: 'RR' + Date.now(),
+            callback: function (response) {
+                var reference = response.reference;
+                refIn.value = reference;
+            },
+            onClose: function () {
+                alert('Transaction was not completed, window closed.');
+            },
+        });
+        handler.openIframe();
+    }
+</script>
+</body>
+
+</html>

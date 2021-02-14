@@ -1,0 +1,473 @@
+<div class="container-fluid main">
+    <div class="row col-lg-12 col-sm-12 col-md-12 main-mid">
+        <!-- ======== Left Side Bar ======== -->
+        <div class="lft d-none d-lg-block d-xl-block col-lg-3 col-xl-2">
+            <div class="d0">
+                <div>
+                    <div class="pic" id="lftPic"></div>
+                    <p class="tle" id="l_Tle">RedRock Technologies</p>
+                </div>
+                <ul>
+                    <li id="load_dashboard">
+                        <i class="fa fa-home"></i>
+                        <a>Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="d1">
+                <ul>
+                    <li id="load_addProduct">
+                        <i class="fa fa-cart-plus"></i>
+                        <a>Add Product</a>
+                    </li>
+                    <li id="load_productList">
+                        <i class="fa fa-clipboard-list"></i>
+                        <a>Product List</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="d2">
+                <ul>
+                    <li id="load_registerPurchase">
+                        <i class="fa fa-money-check"></i>
+                        <a>Register Purchase</a>
+                    </li>
+                    <li id="load_purchaseList">
+                        <i class="fa fa-money-bill-alt"></i>
+                        <a>Sales</a>
+                    </li>
+                    <li id="load_customerList">
+                        <i class="fa fa-users"></i>
+                        <a>See Customers</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="d3">
+                <ul>
+                    <li id="load_settings">
+                        <i class="fa fa-user-cog"></i>
+                        <a>Settings</a>
+                    </li>
+                    <li id="logout">
+                        <i class="fa fa-sign-out-alt"></i>
+                        <a id="l_logOut">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ======== Right Side Bar ======== -->
+        <div id="rgh" class="rgh col-12 col-lg-9 col-xl-10" style="background-color: #fff;">
+            <!-- ========== Spinner ========== -->
+            <div class="d-flex justify-content-center" style="height: calc(100vh - 100px);" id="spinner">
+                <div class="spinner-border" style="width: 3rem; height: 3rem; margin: auto;" role="status"
+                    id="spinnerIn">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+            <div style="display: none;" id="newC">
+                <div class="cnt blind" id="full">
+                    <!-- ======== Dashboard ======== -->
+                    <div class="row col-12 fl_cont dashboard" id="dashboard">
+                        <!-- Top -->
+                        <div class="hd col-12">
+                            <h6>Dashboard</h6>
+                            <p style="font-size: 0.7em;">App / Overview Panel</p>
+                        </div>
+
+                        <!-- Middle -->
+                        <div class="sts col-12">
+                            <div class="sts_col">
+                                <div class="d4">
+                                    <a>Products</a>
+                                    <i class="fa fa-box"></i>
+                                </div>
+                                <div class="d5">
+                                    <h5 id="pNum"></h5>
+                                </div>
+                            </div>
+                            <div class="sts_col">
+                                <div class="d4">
+                                    <a>Sales</a>
+                                    <i class="fa fa-cart-arrow-down"></i>
+                                </div>
+                                <div class="d5">
+                                    <h5 id="mNum"></h5>
+                                </div>
+                            </div>
+                            <div class="sts_col">
+                                <div class="d4">
+                                    <a>Customers</a>
+                                    <i class="fa fa-user-friends"></i>
+                                </div>
+                                <div class="d5">
+                                    <h5 id="cNum"></h5>
+                                </div>
+                            </div>
+                            <div class="sts_col">
+                                <div class="d4">
+                                    <a>Revenue</a>
+                                    <i class="fas fa-trophy" style="color: #212529; margin-right: 0px;"></i>
+                                </div>
+                                <div class="d5">
+                                    <h5 id="salesB"></h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom -->
+                        <div class="btm col-12">
+                            <div class="atv" id="dpyAct">
+                                <h6 id="dpyActv">Activities</h6>
+                                <div class="more" id="more">See more....</div>
+                            </div>
+                        </div>
+
+                        <div class="btm col-12 graph" style="margin-top: 7px;">
+                            <div class="atv">
+                                <h6>Revenue <span> (This Month)</span></h6>
+                                <div class="ct-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ======== Add Product ======== -->
+                    <div class="row col-12 fl_cont add_Pr blind" id="add_Pr">
+                        <!-- Top -->
+                        <div class="hd col-12">
+                            <h6>Product</h6>
+                            <p style="font-size: 0.7em;">Products / Add</p>
+                        </div>
+
+                        <!-- Bottom -->
+                        <div class="btm col-12" style="margin-top: 7px;">
+                            <div class="atv sep">
+                                <form action="product" method="POST" id="addProduct">
+                                    <div class="col-12 d7">
+                                        <label class="col-12 lbl" for="name">Product
+                                            Name</label><br>
+                                        <input class="col-12" type="text" name="name"
+                                            placeholder="**********************" required>
+                                    </div>
+                                    <div class="col-12 d7">
+                                        <label class="col-12 lbl" for="name">Product
+                                            Quantity</label><br>
+                                        <input class="col-12" type="number" name="quantity"
+                                            placeholder="**********************" required>
+                                    </div>
+                                    <div class="col-12 d7">
+                                        <label class="col-12 lbl" for="name">Cost Price
+                                            (₦)</label><br>
+                                        <input class="col-12" type="number" name="cost"
+                                            placeholder="**********************" required>
+                                    </div>
+                                    <div class="col-12 d7">
+                                        <label class="col-12 lbl" for="name">Selling Price
+                                            (₦)</label><br>
+                                        <input class="col-12" type="number" name="sell"
+                                            placeholder="**********************" required>
+                                    </div>
+                                    <div class="col-12 d7">
+                                        <label class="col-12 lbl" for="name">Expiry Date</label><br>
+                                        <input class="col-12" type="date" name="expiry"
+                                            placeholder="**********************" required>
+                                    </div>
+                                    <div class="col-12 d7">
+                                        <label class="col-12 lbl" for="name">Product ID</label><br>
+                                        <input class="col-12" type="text" name="pid"
+                                            placeholder="**********************" required>
+                                    </div>
+                                    <div class="col-12 d7 pull">
+                                        <button type="submit" class="button">Add</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ======== Register Purchase -->
+                    <div class="row col-12 fl_cont add_Pur blind" id="add_Pur">
+                        <!-- Top -->
+                        <div class="hd col-12">
+                            <h6>Purchase</h6>
+                            <p style="font-size: 0.7em;">Purchase / Add</p>
+                        </div>
+
+                        <!-- Bottom -->
+                        <div class="btm col-12" style="margin-top: 7px;">
+                            <div class="atv">
+                                <form action="purchase" method="POST" id="addPurchase">
+                                    <div class="col-12 d7">
+                                        <label class="col-12 lbl" for="name">Customer
+                                            Name</label><br>
+                                        <input class="col-12" type="text" name="name" placeholder="Kennedy Young"
+                                            required>
+                                    </div>
+                                    <div class="col-12 d7">
+                                        <label class="col-12 lbl" for="email">Customer
+                                            Email</label><br>
+                                        <input class="col-12" type="email" name="email"
+                                            style="text-transform: lowercase;" placeholder="Someone@example.com"
+                                            required>
+                                    </div>
+                                    <div class="col-12 d7">
+                                        <label class="col-12 lbl" for="name">Phone Number
+                                        </label><br>
+                                        <input class="col-12" type="tel" name="phone" placeholder="+234 000 000 0000"
+                                            required>
+                                    </div>
+                                    <div class="col-12 d7">
+                                        <label class="col-12 lbl" for="name">Product Name</label><br>
+                                        <input class="col-12" type="text" name="pname"
+                                            placeholder="**************************" id="pdn">
+                                    </div>
+                                    <div class="col-12 d7">
+                                        <label class="col-12 lbl" for="name">Quantity
+                                        </label><br>
+                                        <input class="col-12" type="number" name="quantity"
+                                            placeholder="**********************" required>
+                                    </div>
+                                    <div class="col-12 d7">
+                                        <label class="col-12 lbl" for="name">Product ID</label><br>
+                                        <input class="col-12" type="text" name="pid"
+                                            placeholder="**************************" id="productIdS">
+                                    </div>
+                                    <div class="col-12 d7 pull">
+                                        <button type="submit" class="button">Add</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ======== Product list ======== -->
+                    <div class="row col-12 fl_cont Pr_list blind" id="Pr_list">
+                        <!-- Top -->
+                        <div class="hd col-12">
+                            <h6>Product</h6>
+                            <p style="font-size: 0.7em;">Products / List</p>
+                        </div>
+
+                        <!-- Bottom -->
+                        <div class="btm col-12" style="margin-top: 7px;">
+                            <div class="atv">
+                                <div class="tbl_cont" id="plCnt">
+                                    <table id="product_list">
+                                        <tr>
+                                            <th>S/N</th>
+                                            <th>Name</th>
+                                            <th>Product ID</th>
+                                            <th>Quantity</th>
+                                            <th>Cost Price (₦)</th>
+                                            <th>Selling Price (₦)</th>
+                                            <th>Expiry Date</th>
+                                            <th></th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- ======== Purchase List ======== -->
+                    <div class="row col-12 fl_cont Pur_list blind" id="Pur_list">
+                        <!-- Top -->
+                        <div class="hd col-12">
+                            <h6>Purchase</h6>
+                            <p style="font-size: 0.7em;">Purchase / List</p>
+                        </div>
+
+                        <!-- Bottom -->
+                        <div class="btm col-12" style="margin-top: 7px;">
+                            <div class="atv">
+                                <div class="tbl_cont" id="purCnt">
+                                    <table id="purchase_list">
+                                        <tr>
+                                            <th>S/N</th>
+                                            <th>Customer</th>
+                                            <th>Phone</th>
+                                            <th>Purchase ID</th>
+                                            <th>Product Name</th>
+                                            <th>Quantity</th>
+                                            <th>Total (₦)</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- ======== Customer List ======== -->
+                    <div class="row col-12 fl_cont Cus_list blind" id="Cus_list">
+                        <!-- Top -->
+                        <div class="hd col-12">
+                            <h6>Customers</h6>
+                            <p style="font-size: 0.7em;">Customers / List</p>
+                        </div>
+
+                        <!-- Bottom -->
+                        <div class="btm col-12" style="margin-top: 7px;">
+                            <div class="atv">
+                                <div class="tbl_cont" id="csCnt">
+                                    <table id="customer_list">
+                                        <tr>
+                                            <th>S/N</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Phone Number</th>
+                                            <th></th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- ======== Settings ======== -->
+                    <div class="row col-12 fl_cont settings blind" id="settings">
+                        <!-- Top -->
+                        <div class="hd col-12">
+                            <h6>Settings</h6>
+                            <p style="font-size: 0.7em;">App / Settings</p>
+                        </div>
+
+                        <!-- Bottom -->
+                        <div class="btm col-12" style="margin-top: 7px;">
+                            <div class="atv">
+                                <div class="d8">
+                                    <div class="col-12 dp" id="do" {body.dp1}>
+                                        <p id="visible">Change Profile Photo</p>
+                                    </div>
+                                    <iframe src="/app" name="iframe_a" class="blind" height="200" width="300"></iframe>
+                                    <form action="picture" method="POST" id="dpForm" class="blind"
+                                        enctype="multipart/form-data" target="iframe_a">
+                                        <input type="file" name="dp" id="dp" accept="image/png, image/jpeg"
+                                            onchange="submitDp()">
+                                        <button type="submit" class="button" id="sbn">submit</button>
+                                    </form>
+                                    <form action="user" method="POST" id="settingFm">
+                                        <div class="details">
+                                            <div class="col-12 d7">
+                                                <label class="col-12 lbl" for="companyName">Firstname
+                                                </label><br>
+                                                <input class="col-12" type="text" name="firstname" id="sfirst"
+                                                    placeholder="RedRock" required>
+                                            </div>
+                                            <div class="col-12 d7">
+                                                <label class="col-12 lbl" for="companyName">Lastname
+                                                </label><br>
+                                                <input class="col-12" type="text" name="lastname" id="slast"
+                                                    placeholder="Technologies" required>
+                                            </div>
+                                            <div class="col-12 d7">
+                                                <label class="col-12 lbl" for="companyName">Company Name
+                                                </label><br>
+                                                <input class="col-12" type="text" name="companyName"
+                                                    placeholder="RedRock Technologies" id="Cname">
+                                            </div>
+                                            <div class="col-12 d7">
+                                                <label class="col-12 lbl" for="email">
+                                                    Email</label><br>
+                                                <input class="col-12" style="text-transform:lowercase" type="email"
+                                                    id="semail2" name="email" placeholder="Someone@example.com"
+                                                    disabled>
+                                            </div>
+                                            <div class="col-12 d7">
+                                                <label class="col-12 lbl" for="companyName">Phone
+                                                </label><br>
+                                                <input class="col-12" type="tel" name="phone" id="phone"
+                                                    placeholder="someone@example.com" required>
+                                            </div>
+                                            <div class="col-12 d7">
+                                                <label class="col-12 lbl" for="name">Lowest Quantity (Threshold)
+                                                </label><br>
+                                                <input class="col-12" type="number" name="limit" placeholder="10"
+                                                    id="limit">
+                                            </div>
+                                            <div class="col-12 d7 notify">
+                                                <label class="col-9 col-lg-11 col-xl-11 lbl"
+                                                    for="name">Notifications</label>
+                                                <p class="col-1" id="showN">On</p>
+                                                <select name="switch" id="switch">
+                                                    <option id="on" value="On">On</option>
+                                                    <option id="off" value="Off">Off</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12 d7 pull">
+                                                <button type="submit" class="button">Save</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ======= Payments ======== -->
+                <div class="cnt blind" id="payment">
+                    <div class="row col-12 fl_cont">
+                        <div class="hd col-12">
+                            <h6>Payment</h6>
+                            <p style="font-size: 0.7em;">Payment / Review</p>
+                        </div>
+                        <div class="atv cardBox">
+                            <p style="font-size: 1em; margin-top: 10px;">Card:</p>
+                            <div id="cardDetails">
+                                <p id="cardType" style="text-transform: capitalize;"></p>
+                                <p id="cardNum"></p>
+                                <p id="cardExp"></p>
+                            </div></br>
+                            <p style="font-size: 0.9em; margin-top: 10px;">Payment Renewal</p>
+                            <form action="payment" method="put" id="signUpForm">
+                                <div class="col-12 d7">
+                                    <label class="col-12 lbl" for="C_name">Firstname
+                                    </label><br>
+                                    <input class="col-12" type="text" name="firstname" id="first" placeholder="RedRock"
+                                        required disabled>
+                                </div>
+                                <div class="col-12 d7">
+                                    <label class="col-12 lbl" for="C_name">Lastname
+                                    </label><br>
+                                    <input class="col-12" type="text" name="lastname" id="last"
+                                        placeholder="Technologies" required disabled>
+                                </div>
+                                <div class="col-12 d7">
+                                    <label class="col-12 lbl" for="name">Email
+                                    </label><br>
+                                    <input class="col-12" type="email" name="email" id="email"
+                                        style="text-transform:lowercase" placeholder="someone@example.com" required
+                                        disabled>
+                                </div>
+                                <div class="col-12 d7">
+                                    <label class="col-12 lbl" for="C_name">Subscription</label><br>
+                                    <select name="charge" id="charge">
+                                        <option value="7500">₦7,500 - 1 month (auto-renew)</option>
+                                        <option value="21000">₦21,000 - 3 months (auto-renew)</option>
+                                        <option value="75000">₦75,000 - 1 year (auto-renew)</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 d7 blind">
+                                    <label class="col-12 lbl" for="C_name">Reference
+                                    </label><br>
+                                    <input class="col-12" type="text" name="reference" id="ref" placeholder="Ref:"
+                                        disabled>
+                                </div>
+                                <div class="col-12 d7 pull" style="margin-top: 15px;">
+                                    <button type="submit" class="button">Pay</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- <div class="atv cardBox"> -->
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>

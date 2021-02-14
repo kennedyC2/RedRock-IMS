@@ -1,0 +1,169 @@
+<div class="container-fluid">
+    <!-- ========== Spinner ========== -->
+    <div class="d-flex justify-content-center" style="height: calc(100vh - 100px);" id="spinner">
+        <div class="spinner-border" style="width: 3rem; height: 3rem; margin: auto;" role="status" id="spinnerIn">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <div class="row cover" id="cover" style="display: none;">
+        <div class="col-11 col-md-9 col-lg-5 col-xl-5 info" id="info">
+            <h1>RedRock</h1>
+            <h2><span style="color: #f71d0c;">Inventory</span> Management System</h2>
+            <p>Your Doorway To Effective Management Of Orders, Sales, Financial Reports and Deliveries.</p>
+            <p>
+                <span style="color: #f71d0c;">Join</span> over 20,000 businesses across different countries,
+                using RedRock Inventory Management System and avoid product overstock and shortages.
+            </p>
+
+            <p>If you manufacture, distribute or retail any product, take your business into a new level and achieve
+                more, through:</p>
+            <ul>
+                <li>Increased Profits: Leverage the power of data and real time analytics to reduce wastage, losses, and
+                    identify slow selling products.</li>
+                <li>More Sales: Satisfy your customer's demand by always keeping your inventory level in line with
+                    demands for each period. No more out of stock!</li>
+                <li>Business Growth: Manage relationships with customers, offer rewards, discounts, and organize
+                    marketing campaigns and more.</li>
+                <li>Operate Efficiently: With the power of cloud computing, access and manage your store from anywhere
+                    in the world where there’s internet connectivity.</li>
+            </ul>
+            <!-- <p> On <span
+                style="color: yellow;">Sign Up</span>, ₦50 is charged for card verification.</p>  -->
+            <button id="start"><a href="mailto:cfc@redrockng.com" style="text-decoration: none; color: rgb(243, 243, 21);">Contact Us</a></button> <button id="stLogin">login</button>
+        </div>
+        <div class="col-11 col-lg-4 col-xl-4 lGn" id="lGn">
+            <div class="atv" id="loginPage">
+                <div>
+                    <h5 class="txt">Login</h5>
+                </div>
+                <form action="session" method="POST" id="loginForm">
+                    <div class="col-12 d7">
+                        <label class="col-12 lbl" for="name">Email
+                        </label><br>
+                        <input class="col-12" type="email" style="text-transform:lowercase" name="email"
+                            placeholder="someone@example.com" required>
+                    </div>
+                    <div class="col-12 d7">
+                        <label class="col-12 lbl" for="name">Password
+                        </label><br>
+                        <input class="col-12" type="password" name="password" placeholder="**********************"
+                            required>
+                    </div>
+                    <div class="col-12 d7 pull">
+                        <button type="submit" class="button">login</button>
+                    </div>
+                </form>
+                <div class="rdr">
+                    <p>Don't already have an account?</p>
+                    <a style="margin-left: 8px; color: #f71d0c;" id="login">SignUp</a>
+                </div>
+            </div>
+
+            <div class="atv sUp blind" id="signUpPage">
+                <!-- <div>
+                    <h5 class="txt">Sign-Up</h5>
+                </div> -->
+                <form action="user" method="POST" id="signUpForm">
+                    <div class="col-12 d7">
+                        <label class="col-12 lbl" for="C_name">Firstname
+                        </label><br>
+                        <input class="col-12" type="text" name="firstname" id="first" placeholder="RedRock" required>
+                    </div>
+                    <div class="col-12 d7">
+                        <label class="col-12 lbl" for="C_name">Lastname
+                        </label><br>
+                        <input class="col-12" type="text" name="lastname" id="last" placeholder="Technologies" required>
+                    </div>
+                    <div class="col-12 d7">
+                        <label class="col-12 lbl" for="C_name">Company Name
+                        </label><br>
+                        <input class="col-12" type="text" name="companyName" placeholder="RedRock Technologies"
+                            required>
+                    </div>
+                    <div class="col-12 d7">
+                        <label class="col-12 lbl" for="name">Email
+                        </label><br>
+                        <input class="col-12" type="email" name="email" id="email" style="text-transform:lowercase"
+                            placeholder="someone@example.com" required>
+                    </div>
+                    <div class="col-12 d7">
+                        <label class="col-12 lbl" for="name">Phone
+                        </label><br>
+                        <input class="col-12" type="tel" name="phone" id="phone" placeholder="someone@example.com"
+                            required>
+                    </div>
+                    <div class="col-12 d7">
+                        <label class="col-12 lbl" for="name">Password
+                        </label><br>
+                        <input class="col-12" type="password" name="password" placeholder="**********************"
+                            required>
+                    </div>
+                    <div class="col-12 d7">
+                        <label class="col-12 lbl" for="C_name">Address
+                        </label><br>
+                        <input class="col-12" type="text" name="address" placeholder="*******************" required>
+                    </div>
+                    <div class="col-12 d7">
+                        <label class="col-12 lbl" for="C_name">Subscription</label><br>
+                        <select name="charge" id="charge">
+                            <option value="7500">₦7,500 - 1 month (7-days free trial)</option>
+                            <option value="21000">₦21,000 - 3 months (7-days free trial)</option>
+                            <option value="75000">₦75,000 - 1 year (7-days free trial)</option>
+                        </select>
+                    </div>
+                    <div class="col-12 d7 blind">
+                        <label class="col-12 lbl" for="C_name">Reference
+                        </label><br>
+                        <input class="col-12" type="text" name="reference" id="ref" placeholder="Ref:" disabled>
+                    </div>
+                    <div class="col-12 d7 pull blind" style="margin-top: 15px;">
+                        <button type="submit" class="button" id="pay">continue</button>
+                    </div>
+                </form>
+                <div class="col-12 d7 pull" style="margin-top: 15px;">
+                    <button type="submit" class="button" id="nextP">Register</button>
+                </div>
+                <div class="rdr">
+                    <p>Already have an account?</p>
+                    <a style="margin-left: 8px; color: #f71d0c;" id="signUp">login</a>
+                </div>
+            </div>
+
+
+            <div class="atv sUp blind" id="agreePage">
+                <h5 class="txt">How Does Free Trial Work?</h5>
+                <div class="agreement">
+                    <p>
+                        Our free trial is different from other companies. From onboarding thousands of customers, we
+                        know every company does inventory management differently. As a result, we provide training and
+                        consulting with each 7-day trial. </br></br>
+                        During your free trial, you will be assigned a customer relationship manager who will provide
+                        recommendations on how best to apply RedRock Inventory Management System to your inventory
+                        management needs and train you to be empowered with the software. </br></br>
+                        Why Is My Credit Card Needed?</br>
+                        To ensure our relationship managers devote time to customers who are ‘serious’ in evaluating and
+                        using our software, we ask for a payment method as a way to identify them and ensure your
+                        subscription is renewed after the free trial. </br></br>
+                        Please Note that your card will never be charged during your free trial except for a token of
+                        ₦50 during registration to enable our payment processors validate your card and ensure it is
+                        functional. The ₦50 token will be refunded immediately depending on your bank. </br></br>
+                        When Will RedRock Technologies Ltd Charge My Credit Card?</br>
+                        During registration you select a billing duration, but every new account is on a 7 day free
+                        trial so you don’t get charged until after 7 days if you do not cancel your account.
+                        You can cancel your account by letting your customer relationship manager know and we’ll not
+                        charge your card when the free trial ends. Please note that we will NEVER charge your card until
+                        we receive your permission. </br></br>
+                        Any Other Thing I Should Know?</br>
+                        We are providing 200 businesses using our software within Nigeria with business grants of $1,000
+                        each to cushion the effect of covid-19 on their businesses.
+                        Having an active account on RedRock Inventory Management System makes you eligible. Our team
+                        will contact you if you are selected.
+                    </p>
+                </div>
+                <div class="col-12 d7 pull" style="margin-top: 10px;">
+                    <button type="submit" class="button" id="trigger">continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

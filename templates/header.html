@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="assets/css/chartist.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <style id="animateM"></style>
+    <meta name="description" content="{body.description}">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style id="animateN"></style>
+    <style id="animateS"></style>
+    <base href="{global.baseUrl}">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{global.companyName}</title>
+    <script {payStack.js}></script>
+</head>
+
+<body class="{body.class}" id="body">
+    <div class="container-fluid outer" id="outer">
+        <div class="row col-lg-12 col-sm-12 col-md-12 mid">
+            <!-- ======== Header ======== -->
+            <header>
+                <h3>RedRock-<span>IMS</span> <span id="version">v1.5</span></h3>
+                <div style="display: flex; ">
+                    <div id="n-icon">
+                        <svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-bell-fill" fill="#f71d0c"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                        </svg>
+                        <p id="notFNum"></p>
+                    </div>
+                    <div id="m-icon" class="d-lg-none d-xl-none">
+                        <svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-list" fill="#f71d0c"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </div>
+                </div>
+
+            </header>
+
+            <!-- ======== Header Ends ======== -->
+            <!-- ======== Mobile Dropdown Menu ======== -->
+            <div id="m-dropdown">
+                <div class="d0">
+                    <div>
+                        <div class="pic" id="mPic"></div>
+                        <p class="tle" id="m_Tle">RedRock Technologies</p>
+                    </div>
+                    <ul>
+                        <li id="mload_dashboard">
+                            <i class="fa fa-home"></i>
+                            <a>Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="d1">
+                    <ul>
+                        <li id="mload_addProduct">
+                            <i class="fa fa-cart-plus"></i>
+                            <a>Add Product</a>
+                        </li>
+                        <li id="mload_productList">
+                            <i class="fa fa-clipboard-list"></i>
+                            <a>Product List</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="d2">
+                    <ul>
+                        <li id="mload_registerPurchase">
+                            <i class="fa fa-money-check"></i>
+                            <a>Register Purchase</a>
+                        </li>
+                        <li id="mload_purchaseList">
+                            <i class="fa fa-money-bill-alt"></i>
+                            <a>Sales</a>
+                        </li>
+                        <li id="mload_customerList">
+                            <i class="fa fa-users"></i>
+                            <a>See Customers</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="d3">
+                    <ul>
+                        <li id="mload_settings">
+                            <i class="fa fa-user-cog"></i>
+                            <a>Settings</a>
+                        </li>
+                        <li id="mlogout">
+                            <i class="fa fa-sign-out-alt"></i>
+                            <a id="m_logOut">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ======== End Of Mobile Dropdown Menu ======== -->
+            <!-- Page Notification Pane -->
+            <div class="col-12 nPane">
+                <p id="nPane" class="col-10 col-md-5 col-lg-3 col-xl-3"></p>
+            </div>
+
+            <div id="n-dropdown">
+                <p>Products Below threshold</p>
+                <ol id="BB"></ol>
+            </div>
+        </div>
+    </div>

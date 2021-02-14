@@ -1,0 +1,19 @@
+{
+  "name": "redrock",
+  "version": "1.0.0",
+  "description": "IMS",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kennedy C Young",
+  "license": "ISC",
+  "dependencies": {
+    "formidable": "^1.2.2",
+    "nodemailer": "^6.4.15",
+    "paystack-api": "^2.0.5"
+  }
+}
