@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "formidable": "^1.2.2",
-    "nodemailer": "^6.4.15",
+    "nodemailer": "^6.7.2",
     "paystack-api": "^2.0.5"
   }
 }
